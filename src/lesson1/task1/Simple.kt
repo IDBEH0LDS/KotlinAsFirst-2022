@@ -65,7 +65,17 @@ fun main() {
  * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
-fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
+fun seconds(hours: Int, minutes: Int, seconds: Int): Int {
+    val tHours: Int = hours ?: 0
+    val secFromHours: Int = hours * 60 * 60
+    val tMinutes: Int = minutes ?: 0
+    val secFromMinutes: Int = minutes * 60
+    val tSeconds: Int = seconds ?: 0
+    val secFromSeconds: Int = tSeconds
+    val secTotal: Int = secFromHours + secFromMinutes + secFromSeconds
+    println("Seconds: $secTotal")
+    return secTotal
+}
 
 /**
  * Тривиальная (1 балл)
@@ -74,7 +84,19 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double {
+    val tSagenes: Int = sagenes ?: 0
+    val verFromSagenes: Int = tSagenes * 48
+    val tArshins: Int = arshins ?: 0
+    val verFromArshins: Int = tArshins * 16
+    val tVershoks: Int = vershoks ?: 0
+    val verFromVershoks: Int = tVershoks
+    val verTotal: Int = verFromSagenes + verFromArshins + verFromVershoks
+    println("Vershoks Total: $verTotal")
+    val lengthTotal: Double = verTotal * 4.445 / 100
+    println("Length Total: $lengthTotal")
+    return lengthTotal
+}
 
 /**
  * Тривиальная (1 балл)
